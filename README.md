@@ -37,7 +37,7 @@ Uses a route parameter to calculate and return the dog's age equivalent.
 Returns a JSON response with odd numbers.
 
 ## Project Notes
-.gitignore:
-
+Recommended `.gitignore`:
+```txt
 node_modules
 .env
