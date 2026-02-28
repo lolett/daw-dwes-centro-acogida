@@ -39,3 +39,4 @@ Recommended `.gitignore`:
 ```txt
 node_modules
 .env
+.DS_Store
