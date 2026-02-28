@@ -24,8 +24,7 @@ It is a **Node.js + Express** application that demonstrates:
 
 ## Run the project
 `node app.js`
-
-The server will start (typically on http://localhost:3000 unless configured differently).
+- The server will start (typically on http://localhost:3000 unless configured differently).
 
 ## Main Endpoints
 - GET `/bienvenida`
