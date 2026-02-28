@@ -31,8 +31,7 @@ It is a **Node.js + Express** application that demonstrates:
 Renders an EJS page with dynamic content (e.g., a name).
 - GET `/edad-perruna/:edadHumana`
 Uses a route parameter to calculate and return the dog's age equivalent.
-* Example:
-`/edad-perruna/10`
+* Example: `/edad-perruna/10`
 - GET `/numeros-impares`
 Returns a JSON response with odd numbers.
 
