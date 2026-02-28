@@ -1,0 +1,40 @@
+// Importar el framework Express, para crear un servidor web en Node.js
+const express = require("express");
+const app = express();
+const path = require("path");
+const PORT = 3000;
+
+// Servir archivos estáticos desde la carpeta "public" para acceder directamte a index.html, CSS o imágenes.
+app.use(express.static(path.join(__dirname, "public")));
+
+// Activar EJS como motor de plantillas para renderizar vistas dinámicas.
+app.set("view engine", "ejs");
+
+
+// RUTAS (endpoints) DEL SERVIDOR.
+
+// Ruta para la página de /bienvenida con un nombre dinámico
+app.get("/bienvenida", (req, res) => {
+  res.render("bienvenida", { nombre: "Manuel" });
+});
+
+// Ruta para el endpoint /edad-perruna/:edadHumana y calcular la edad de un perro en años humanos.
+app.get("/edad-perruna/:edadHumana", (req, res) => {
+  const edadHumana = Number(req.params.edadHumana);
+  const edadPerruna = edadHumana * 7;
+  res.send(`Tu perro tendría ${edadPerruna} años humanos.`);
+});
+
+// Ruta para el endpoint /numeros-impares
+app.get("/numeros-impares", (req, res) => {
+  const impares = []
+  for (let index = 1; index <= 15; index++) {
+    if (index % 2 !== 0) { impares.push(index) }
+  }
+  res.json(impares)
+});
+
+// Iniciar el servidor
+app.listen(PORT, () => {
+  console.log(`Servidor ejecutándose en localhost:${PORT}...`);
+});
